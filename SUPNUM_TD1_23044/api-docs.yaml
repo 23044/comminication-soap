@@ -1,0 +1,149 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /api/servers:
+    get:
+      tags:
+      - server-controller
+      operationId: listServers
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Server"
+    post:
+      tags:
+      - server-controller
+      operationId: createServer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Server"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Server"
+  /api/servers/{id}/stop:
+    post:
+      tags:
+      - server-controller
+      operationId: stopServer
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Server"
+  /api/servers/{id}/start:
+    post:
+      tags:
+      - server-controller
+      operationId: startServer
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Server"
+  /api/servers/{id}/rename:
+    patch:
+      tags:
+      - server-controller
+      operationId: renameServer
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: name
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Server"
+  /api/servers/{id}/status:
+    get:
+      tags:
+      - server-controller
+      operationId: getStatus
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: boolean
+  /api/servers/{id}:
+    delete:
+      tags:
+      - server-controller
+      operationId: deleteServer
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    Server:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        ipAddress:
+          type: string
+        status:
+          type: boolean
