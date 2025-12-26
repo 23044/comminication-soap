@@ -28,5 +28,3 @@ public class SoapClientConfig {
 		return webServiceTemplate;
 	}
 }
-
-

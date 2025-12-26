@@ -4,16 +4,16 @@ public class ServerDTO {
 	private Long id;
 	private String name;
 	private String ipAddress;
-	private Boolean status;
+	private Boolean running;
 
 	public ServerDTO() {
 	}
 
-	public ServerDTO(Long id, String name, String ipAddress, Boolean status) {
+	public ServerDTO(Long id, String name, String ipAddress, Boolean running) {
 		this.id = id;
 		this.name = name;
 		this.ipAddress = ipAddress;
-		this.status = status;
+		this.running = running;
 	}
 
 	public Long getId() {
@@ -40,13 +40,11 @@ public class ServerDTO {
 		this.ipAddress = ipAddress;
 	}
 
-	public Boolean getStatus() {
-		return status;
+	public Boolean getRunning() {
+		return running;
 	}
 
-	public void setStatus(Boolean status) {
-		this.status = status;
+	public void setRunning(Boolean running) {
+		this.running = running;
 	}
 }
-
-

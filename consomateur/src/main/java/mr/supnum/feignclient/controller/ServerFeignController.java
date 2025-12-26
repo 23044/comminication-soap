@@ -1,27 +1,30 @@
 package mr.supnum.feignclient.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import mr.supnum.feignclient.client.ConsumateurClient;
-import mr.supnum.feignclient.dto.GetServerStatusResponse;
-import mr.supnum.feignclient.dto.Server;
-import mr.supnum.feignclient.dto.StartServerResponse;
-import mr.supnum.feignclient.dto.StopServerResponse;
+import mr.supnum.feignclient.dto.*;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/client/servers")
+@Tag(name = "Server Management", description = "API pour gérer les serveurs via le middle-service")
 public class ServerFeignController {
 
     private final ConsumateurClient consumateurClient;
 
     public ServerFeignController(ConsumateurClient consumateurClient) {
         this.consumateurClient = consumateurClient;
+    }
+
+    @PostMapping
+    @Operation(summary = "Créer un nouveau serveur", description = "Crée un serveur avec le nom et l'adresse IP fournis")
+    public ResponseEntity<Server> createServer(@RequestBody CreateServerRequest request) {
+        Server server = consumateurClient.createServer(request);
+        return ResponseEntity.status(201).body(server);
     }
 
     @GetMapping
@@ -47,5 +50,16 @@ public class ServerFeignController {
         StopServerResponse response = consumateurClient.stopServer(id);
         return ResponseEntity.ok(response);
     }
-}
 
+    @PutMapping("/{id}/rename")
+    public ResponseEntity<Server> renameServer(@PathVariable Long id, @RequestBody RenameServerRequest request) {
+        Server server = consumateurClient.renameServer(id, request);
+        return ResponseEntity.ok(server);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteServer(@PathVariable Long id) {
+        consumateurClient.deleteServer(id);
+        return ResponseEntity.noContent().build();
+    }
+}

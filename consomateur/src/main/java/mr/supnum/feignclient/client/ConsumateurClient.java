@@ -1,17 +1,16 @@
 package mr.supnum.feignclient.client;
 
-import mr.supnum.feignclient.dto.GetServerStatusResponse;
-import mr.supnum.feignclient.dto.Server;
-import mr.supnum.feignclient.dto.StartServerResponse;
-import mr.supnum.feignclient.dto.StopServerResponse;
+import mr.supnum.feignclient.dto.*;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @FeignClient(name = "middle-service", url = "${middle.service.url}")
 public interface ConsumateurClient {
+
+    @PostMapping("/api/servers")
+    Server createServer(@RequestBody CreateServerRequest request);
 
     @GetMapping("/api/servers")
     List<Server> getAllServers();
@@ -24,5 +23,10 @@ public interface ConsumateurClient {
 
     @PostMapping("/api/servers/{id}/stop")
     StopServerResponse stopServer(@PathVariable("id") Long id);
-}
 
+    @PutMapping("/api/servers/{id}/rename")
+    Server renameServer(@PathVariable("id") Long id, @RequestBody RenameServerRequest request);
+
+    @DeleteMapping("/api/servers/{id}")
+    void deleteServer(@PathVariable("id") Long id);
+}

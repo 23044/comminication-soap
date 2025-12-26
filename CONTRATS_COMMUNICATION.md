@@ -19,6 +19,7 @@ Le middle-service REST expose une API REST qui consomme le service SOAP existant
 **Méthode HTTP:** `POST`
 
 **Paramètres d'entrée:**
+
 ```json
 {
   "name": "string",
@@ -29,6 +30,7 @@ Le middle-service REST expose une API REST qui consomme le service SOAP existant
 **Format de requête:** JSON
 
 **Format de réponse:** JSON
+
 ```json
 {
   "id": 1,
@@ -53,6 +55,7 @@ Le middle-service REST expose une API REST qui consomme le service SOAP existant
 **Format de requête:** N/A
 
 **Format de réponse:** JSON (Array)
+
 ```json
 [
   {
@@ -75,11 +78,13 @@ Le middle-service REST expose une API REST qui consomme le service SOAP existant
 **Méthode HTTP:** `GET`
 
 **Paramètres d'entrée:**
+
 - `id` (Path Variable): Long - Identifiant du serveur
 
 **Format de requête:** N/A
 
 **Format de réponse:** JSON
+
 ```json
 true
 ```
@@ -95,11 +100,13 @@ true
 **Méthode HTTP:** `POST`
 
 **Paramètres d'entrée:**
+
 - `id` (Path Variable): Long - Identifiant du serveur
 
 **Format de requête:** N/A (Body vide)
 
 **Format de réponse:** JSON
+
 ```json
 {
   "id": 1,
@@ -120,11 +127,13 @@ true
 **Méthode HTTP:** `POST`
 
 **Paramètres d'entrée:**
+
 - `id` (Path Variable): Long - Identifiant du serveur
 
 **Format de requête:** N/A (Body vide)
 
 **Format de réponse:** JSON
+
 ```json
 {
   "id": 1,
@@ -145,8 +154,10 @@ true
 **Méthode HTTP:** `PUT`
 
 **Paramètres d'entrée:**
+
 - `id` (Path Variable): Long - Identifiant du serveur
 - Body (JSON):
+
 ```json
 {
   "newName": "string"
@@ -156,6 +167,7 @@ true
 **Format de requête:** JSON
 
 **Format de réponse:** JSON
+
 ```json
 {
   "id": 1,
@@ -176,6 +188,7 @@ true
 **Méthode HTTP:** `DELETE`
 
 **Paramètres d'entrée:**
+
 - `id` (Path Variable): Long - Identifiant du serveur
 
 **Format de requête:** N/A
@@ -195,6 +208,7 @@ Le service consommateur expose les mêmes endpoints que le middle-service pour p
 **Base URL:** `http://localhost:8081`
 
 Tous les endpoints sont identiques à ceux du middle-service:
+
 - `POST /api/servers` - Créer un serveur
 - `GET /api/servers` - Lister tous les serveurs
 - `GET /api/servers/{id}/status` - Obtenir le statut
@@ -212,10 +226,12 @@ Client → Service Consommateur (Port 8081) → Middle-Service REST (Port 8083) 
 ```
 
 1. **Service SOAP** (SUPNUM_TD1_23044): Port 8080
+
    - Expose les services SOAP via `/ws/*`
    - Namespace: `http://supnum.com/server`
 
 2. **Middle-Service REST**: Port 8083
+
    - Consomme le service SOAP
    - Expose des endpoints REST via `/api/servers/*`
    - Format: JSON
@@ -269,5 +285,3 @@ Tous les endpoints utilisent le format **JSON** pour les requêtes et réponses.
 - `400 BAD REQUEST`: Requête invalide
 - `404 NOT FOUND`: Ressource non trouvée
 - `500 INTERNAL SERVER ERROR`: Erreur serveur
-
-

@@ -1,8 +1,12 @@
+D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\config\OpenApiConfig.java
 D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\config\SoapClientConfig.java
 D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\controller\ServerRestController.java
 D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\dto\CreateServerRequestDTO.java
+D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\dto\GetServerStatusResponseDTO.java
 D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\dto\RenameServerRequestDTO.java
 D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\dto\ServerDTO.java
+D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\dto\StartServerResponseDTO.java
+D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\dto\StopServerResponseDTO.java
 D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\MiddleServiceApplication.java
 D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\src\main\java\mr\supnum\middleservice\service\SoapServerService.java
 D:\S5\SOA\comminication-soap2\comminication-soap\middle-service\target\generated-sources\jaxb\mr\supnum\middleservice\wsdl\CreateServerRequest.java
