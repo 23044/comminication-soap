@@ -1,0 +1,7 @@
+D:\S5\SOA\comminication-soap2\comminication-soap\consomateur\src\main\java\mr\supnum\feignclient\client\ConsumateurClient.java
+D:\S5\SOA\comminication-soap2\comminication-soap\consomateur\src\main\java\mr\supnum\feignclient\controller\ServerFeignController.java
+D:\S5\SOA\comminication-soap2\comminication-soap\consomateur\src\main\java\mr\supnum\feignclient\dto\GetServerStatusResponse.java
+D:\S5\SOA\comminication-soap2\comminication-soap\consomateur\src\main\java\mr\supnum\feignclient\dto\Server.java
+D:\S5\SOA\comminication-soap2\comminication-soap\consomateur\src\main\java\mr\supnum\feignclient\dto\StartServerResponse.java
+D:\S5\SOA\comminication-soap2\comminication-soap\consomateur\src\main\java\mr\supnum\feignclient\dto\StopServerResponse.java
+D:\S5\SOA\comminication-soap2\comminication-soap\consomateur\src\main\java\mr\supnum\feignclient\FeignClientApplication.java

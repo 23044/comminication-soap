@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
+Voir https://eclipse-ee4j.github.io/jaxb-ri 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2025.12.25 à 11:47:06 PM GMT 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://supnum.com/server">
+    <schemaBindings map="false">
+      <package name="mr.supnum.middleservice.wsdl"/>
+    </schemaBindings>
+    <bindings scd="tns:createServerRequest">
+      <class ref="mr.supnum.middleservice.wsdl.CreateServerRequest"/>
+    </bindings>
+    <bindings scd="tns:createServerResponse">
+      <class ref="mr.supnum.middleservice.wsdl.CreateServerResponse"/>
+    </bindings>
+    <bindings scd="~tns:Server">
+      <class ref="mr.supnum.middleservice.wsdl.Server"/>
+    </bindings>
+    <bindings scd="tns:listServersResponse">
+      <class ref="mr.supnum.middleservice.wsdl.ListServersResponse"/>
+    </bindings>
+    <bindings scd="tns:getServerStatusRequest">
+      <class ref="mr.supnum.middleservice.wsdl.GetServerStatusRequest"/>
+    </bindings>
+    <bindings scd="tns:getServerStatusResponse">
+      <class ref="mr.supnum.middleservice.wsdl.GetServerStatusResponse"/>
+    </bindings>
+    <bindings scd="tns:startServerRequest">
+      <class ref="mr.supnum.middleservice.wsdl.StartServerRequest"/>
+    </bindings>
+    <bindings scd="tns:startServerResponse">
+      <class ref="mr.supnum.middleservice.wsdl.StartServerResponse"/>
+    </bindings>
+    <bindings scd="tns:stopServerRequest">
+      <class ref="mr.supnum.middleservice.wsdl.StopServerRequest"/>
+    </bindings>
+    <bindings scd="tns:stopServerResponse">
+      <class ref="mr.supnum.middleservice.wsdl.StopServerResponse"/>
+    </bindings>
+    <bindings scd="tns:renameServerRequest">
+      <class ref="mr.supnum.middleservice.wsdl.RenameServerRequest"/>
+    </bindings>
+    <bindings scd="tns:renameServerResponse">
+      <class ref="mr.supnum.middleservice.wsdl.RenameServerResponse"/>
+    </bindings>
+    <bindings scd="tns:deleteServerRequest">
+      <class ref="mr.supnum.middleservice.wsdl.DeleteServerRequest"/>
+    </bindings>
+    <bindings scd="tns:deleteServerResponse">
+      <class ref="mr.supnum.middleservice.wsdl.DeleteServerResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
